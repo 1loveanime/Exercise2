@@ -5,5 +5,11 @@ header {
 }
 
 .body-padding {
-	padding: 20px;
+	padding: 15px;
+}
+
+.loginbuttonposition {
+	position: absolute;
+	right: 10px;
+	top: 32px;
 }
