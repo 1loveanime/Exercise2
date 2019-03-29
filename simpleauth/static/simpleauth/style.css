@@ -1,0 +1,9 @@
+header {
+	width: 100%;
+	height: 75px;
+	background-color: #57F957;
+}
+
+.body-padding {
+	padding: 20px;
+}

@@ -1,0 +1,32 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="{% static 'simpleauth/style.css' %}">
+	<title>JapanSmile</title>
+</head>
+<body>
+	<header class="body-padding">
+		<div class="page-header text-right">
+			{% if user.is_authenticated %}
+			<p>Wazzup user: {{ user.username }}
+				<small>(<a href="{% url 'logout' %}">logout?</a>)</small>
+			</p>
+			{% else %}
+			<a href="{% url 'login' %}" class="top-menu"><span class="glyphicon glyphicon-lock">Login</span>
+			</a>
+			{% endif %}
+		</div>
+	</header>
+	<div class="container body-padding">
+		<div class="row">
+				<div class="col-sm">
+			    {% block content %}
+			    {% endblock %}
+			</div>
+		</div>
+    </div>
+</body>
+</html>
